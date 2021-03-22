@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{# Base.html #}
+
+{% set site_lang = 'tr' %}
+
+{# Index.html #}
+
+{% block form_url %}"/tr/processing"{% endblock %}
+
+{% block image_label %}Lütfen işlemek istediğiniz fotoğrafı yükleyin.{% endblock %}
+
+{% block dilution_factor %}Mililitre başına hücre sayısının hesaplanması için gereken seyreltme faktörü. Eğer mililitre başına hücre sayısının hesaplanmasını istemiyorsanız boş bırakın.{% endblock %}
+
+{% block options %}Özel parametreleri kullan{% endblock %}
+
+{% block settings %}Ayarlar{% endblock %}
+
+{% block settings_warning %}Buradaki ayarların doldurulması zorunlu değildir. Boş bırakılan ayarlar varsayılan değerleri kullanacaktır.{% endblock %}
+
+{% block blur_size %}Bulanıklaştırmak için filtre boyutu. Ne kadar yüksekse resim o kadar bulanıklaşacaktır. Hücre tespitini büyük ölçüde etkiler. Minimum değeri 1'dir.<br>(Varsayılan değeri 30){% endblock %}
+
+{% block epsilon %}Kulavuzlu görüntü filtresi için epsilon değeri. Ne kadar yüksek ise resim o kadar bulanıklaşıcak ve kenarlar kaybolmaya başlayacaktır.<br>(Varsayılan değeri 200){% endblock %}
+
+{% block kernel_size %}Canlı hücre algılanmasındaki morfolojik işlemler için yapısal  eleman boyutu. Ne kadar yüksekse, resimde o kadar fazla ayrıntı yok olacaktır. Minimum değeri 1'dir.<br>(Varsayılan değeri 11){% endblock %}
+
+{% block deadcellThresh %}Ölü hücre sayımında Otsu yöntemi kullanılarak hesaplanacak değer için olan katsayıyı belirtir. Ne kadar yüksekse o kadar yanlış ölü hücre, ne kadar düşük ise o kadar az ölü hücre belirlenecektir. Önerilen değer 1'in altında olmasıdır. 3 maksimum, 0 minimum değeridir.<br>(Varsayılan değeri 0.65){% endblock %}
+
+{% block deadcellKernelSize %}Ölü hücre algılanmasındaki morfolojik işlemler için yapısal  eleman boyutu. Ne kadar yüksekse, resimde o kadar fazla ayrıntı yok olacaktır. Minimum değeri 1'dir.<br>(Varsayılan değeri 3){% endblock %}
+
+{% block cell_area %}Minimum hücre alanı. Bir hücrenin sahip olması gereken minimum alanı tanımlar. Eğer 0 ise hücreler alanlarına göre filtrelenmeyecektir.<br>(Varsayılan değeri 100){% endblock %}
+
+{% block submit %}"Gönder"{% endblock %}
+
+{% block reset %}"Sıfırla"{% endblock %}

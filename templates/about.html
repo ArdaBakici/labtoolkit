@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mx-2">
+	<div class="my-4">
+		<h1>{% block what_is_title %}{% endblock %}</h1>
+		<p>{% block what_is %}{% endblock %}</p>
+	</div>
+	<div class="my-4">
+		<h1>{% block privacy_title %}{% endblock %}</h1>
+		<p>{% block privacy %}{% endblock %}</p>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+h1{
+	color: red;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type="checkbox"]:checked ~ .reveal-if-active {
+	opacity: 1;
+	max-height: 2000px;
+	overflow: visible;
+}
+
+.img-max {
+  max-width: 50%;
+}
+
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}

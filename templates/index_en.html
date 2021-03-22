@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{# Base.html #}
+	
+{% set site_lang = "en" %}
+
+{# Index.html #}
+
+{% block form_url %}"/en/processing"{% endblock %}
+
+{% block image_label %}Please upload an image that you want to process.{% endblock %}
+
+{% block dilution_factor %}Dilution factor for cells per mililiter calculation. Leave empty if you don't want to calculate cells per mililiter.{% endblock %}
+
+{% block options %}Use custom parameters{% endblock %}
+
+{% block settings %}Settings{% endblock %}
+
+{% block settings_warning %}Settings here are not required to be filled. Empty ones will be using the default values.{% endblock %}
+
+{% block blur_size %}Kernel size for bluring. Higher it is more blurry picture will get. Greatly affects the detection. Minimum value is 1.<br>(Default value is 30){% endblock %}
+
+{% block epsilon %}Epsilon Parameter for guided image filter. Higher it is more blurry picture will get and edges will disappear.<br>(Default value is 200){% endblock %}
+
+{% block kernel_size %}Kernel size for morphological operations in alive cell detection. Higher it is more detail will be lost on the picture. Minimum value is 1.<br>(Default value is 11){% endblock %}
+
+{% block deadcellThresh %}Amount that will be multiplied by value calculated from Otsu thresholding during dead cell detection. Lower it is less dead cells will be detected, higher it is more falsely dead cells will be detected. 3 is maximum, 0 is minimum.<br>(Default value is 0.65){% endblock %}
+
+{% block deadcellKernelSize %}Kernel size for morphological operations in dead cell detection. Higher it is more detail will be lost on the picture. Minimum value is 1.<br>(Default value is 3){% endblock %}
+
+{% block cell_area %}Minimum cell area. Defines the smallest size for a cell. If it is 0, cells won't be filtered by their size.<br>(Default value is 100){% endblock %}
+
+{% block submit %}"Submit"{% endblock %}
+
+{% block reset %}"Reset"{% endblock %}

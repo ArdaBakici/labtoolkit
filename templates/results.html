@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="text-center">
+		<img class="img-fluid" alt="results" src="data:image/png;base64,{{ img }}">
+	</div>
+	<div class="my-3" style="font-size: 1.25rem">
+		{% set  totalcell_count = alivecell_count + deadcell_count %}
+		<div class="row">
+			<div class="col-12 col-lg-6 text-center">
+				<p>{% block alive_cell_number %}{% endblock %} {{ alivecell_count }}</p>
+			</div>
+
+			<div class="col-12 col-lg-6 text-center">
+				<p>{% block dead_cell_number %}{% endblock %} {{ deadcell_count }}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-lg-6 text-center">
+				<p>{% block total_cell_number %}{% endblock %} {{ totalcell_count }}</p>
+			</div>
+
+			<div class="col-12 col-lg-6 text-center">
+				<p>{% block cell_viability %}{% endblock %} {{ (alivecell_count / totalcell_count) * 100 }}</p>
+			</div>
+		</div>
+
+		{% if not dilutionFactor == -1 %}
+			<div class="row mb-3">
+				<div class="col-12 col-lg-4 text-center">
+					<p>{{ (alivecell_count*dilutionFactor) * 10000 }} {% block live_cell_per_ml %}{% endblock %}</p>
+				</div>
+
+				<div class="col-12 col-lg-4 text-center">
+					<p>{{ (deadcell_count*dilutionFactor) * 10000 }} {% block dead_cell_per_ml %}{% endblock %}</p>
+				</div>
+
+				<div class="col-12 col-lg-4 text-center">
+					<p>{{ (totalcell_count*dilutionFactor) * 10000 }} {% block total_cell_per_ml %}{% endblock %}</p>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+
+{% endblock %}

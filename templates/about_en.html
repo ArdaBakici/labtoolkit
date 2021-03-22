@@ -1,0 +1,12 @@
+{% extends 'about.html' %}
+
+{# Base.html #}
+
+{% set site_lang = "en" %}
+
+{# About.html #}
+
+{% block what_is_title %}What is Labtoolkit{% endblock %}
+{% block what_is %}Labtoolkit is an image processing based trypan blue cell detection algorithm which is hosted on a web server. It makes trypan blue cell detection easy, user-friendly and accessable. {% endblock %}
+{% block privacy_title %}What about my data?{% endblock %}
+{% block privacy %}Labtoolkit do not store any user data. After processing Labtoolkit deletes all the images from its storage.{% endblock %}
