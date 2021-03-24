@@ -121,6 +121,10 @@ def watershed_count(image, drawImg, dead_cell_mask, minArea):
         # detect contours in the mask and grab the largest one
         cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
                                 cv2.CHAIN_APPROX_SIMPLE)
+        if len(cnts) == 2:
+            cnts = cnts[0]
+        elif len(cnts) == 3:
+            cnts = cnts[1]
         cnts = imutils.grab_contours(cnts)
         c = max(cnts, key=cv2.contourArea)
         if len(c) >= 5 and cv2.contourArea(c) > minArea:
